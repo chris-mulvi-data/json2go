@@ -11,3 +11,7 @@ I decided I should write this utility because I was not happy with the way onlin
 ## This ain't pretty...
 
 Since this the first thing I've written in Go, I doubt the code will be considered pretty by any stretch of the imagination.  I am only hoping that it will function the way I intend it to.  The real challenge will be to not let the ADHD kick in before I've finished.  With any luck, the Autism hyper focus will help me stay on task... even if that means eating doesn't always happen--the things I do for the sake of a random idea had while sitting in my pajamas drinking coffee.
+
+## Testing Standards
+
+In order to ensure that testing actually happens, following a test first design is prefered.  This means that the first thing written for any function or feature is the unit test to prove that it works.  This should be a simple use case for this since the bulk of what is needed is text formatting into a very specific syntax.

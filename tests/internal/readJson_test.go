@@ -11,8 +11,8 @@ func Test_readFile(t *testing.T) {
 		filePath  string
 		wantError bool
 	}{
-		{"testJson.json", false},
-		{"testBadJson.json", true},
+		{"../../testData/testJson.json", false},
+		{"../../testData/testBadJson.json", true},
 		{"nonExistent.json", true},
 	}
 

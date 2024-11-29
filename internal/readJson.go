@@ -10,11 +10,10 @@ import (
 func ReadFile(path string) (map[string]interface{}, error) {
 	content, err := os.ReadFile(path)
 	if err != nil {
-		// return nil, errors.New("failed to read the json file")
 		return nil, err
 	}
 
-	isValidJson := json.Valid(content)
+	var isValidJson bool = json.Valid(content)
 	if !isValidJson {
 		return nil, errors.New("invalid json")
 	}

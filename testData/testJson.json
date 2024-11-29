@@ -1,14 +1,7 @@
 {
-    "fuzzzies": [
-        {
-            "name": "Kody",
-            "color": "bear color",
-            "food": "kake"
-        },
-        {
-            "name": "Mo",
-            "color": "Kinda brownish gray",
-            "food": "maple slurp"
-        }
-    ]
+    "fuzzy": "Kody",
+    "food": "kake",
+    "friend": "moose",
+    "number": 6,
+    "isCute": true
 }
