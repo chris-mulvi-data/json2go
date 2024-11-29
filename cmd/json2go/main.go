@@ -1,8 +1,14 @@
 package main
 
-import "json2go/internal"
+import (
+	"fmt"
+	"json2go/internal"
+)
 
 func main() {
 
-	internal.ReadFile("")
+	source, destination := internal.GetUserInputs()
+
+	fmt.Println("The source is:", source)
+	fmt.Println("The destination is:", destination)
 }
