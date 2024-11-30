@@ -2,6 +2,7 @@ package internal_test
 
 import (
 	"json2go/internal"
+	"os"
 	// "os"
 	"testing"
 )
@@ -9,8 +10,8 @@ import (
 func Test_GetUserInputs(t *testing.T) {
 
 	var sourcePath string = "test"
-	var destinationPath string = "test2"
-	// os.Args = []string{sourcePath, destinationPath}
+	var destinationPath string = ""
+	os.Args = []string{sourcePath, destinationPath}
 
 	source, destination := internal.GetUserInputs()
 
