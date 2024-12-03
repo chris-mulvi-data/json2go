@@ -13,6 +13,10 @@ func main() {
 	*/
 	var conf internal.Config
 	internal.LoadConfig(&conf)
+	// set defaults for any config values that were not found in
+	// the user's config file.
+	conf.SetDefaults() 
+	
 
 	source, destination := internal.GetUserInputs(&conf)
 
