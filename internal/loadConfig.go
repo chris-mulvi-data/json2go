@@ -4,10 +4,13 @@ in the config.
 */
 package internal
 
-import "os"
+import (
+	"fmt"
+	"os"
+)
 
 type Config struct {
-	DestinationPath string `json:"DestinationPath"`
+	DestinationPath string `json:"destinationPath"`
 }
 
 func (c *Config) SetDefaults() {
@@ -18,6 +21,10 @@ func (c *Config) SetDefaults() {
 }
 
 func LoadConfig(conf *Config) {
-	
-	conf.DestinationPath = "test"
+
+	f, err := os.Open("")
+	if err != nil {
+		fmt.Println(err)
+	}
+	defer f.Close()
 }
