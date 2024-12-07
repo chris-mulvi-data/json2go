@@ -20,6 +20,10 @@ func (c *Config) SetDefaults() {
 	}
 }
 
+func (c *Config) setDefaults() {
+	c.DestinationPath = ""
+}
+
 func LoadConfig(conf *Config) {
 
 	f, err := os.Open("")
