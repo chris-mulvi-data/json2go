@@ -5,12 +5,14 @@ in the config.
 package internal
 
 import (
+	"encoding/json"
 	"fmt"
 	"os"
 )
 
 type Config struct {
 	DestinationPath string `json:"destinationPath"`
+	PreabmleText    string `json:"preambleText"`
 }
 
 func (c *Config) SetDefaults() {
@@ -20,15 +22,15 @@ func (c *Config) SetDefaults() {
 	}
 }
 
-func (c *Config) setDefaults() {
-	c.DestinationPath = ""
-}
-
+// LoadConfig loads the configuration file.  The expected location for the config
+// is "~/.config/json2go/config.json"
 func LoadConfig(conf *Config) {
 
-	f, err := os.Open("")
+	userHome := os.Getenv("HOME")
+	f, err := os.ReadFile(userHome + "/.config/json2go/config.json")
 	if err != nil {
 		fmt.Println(err)
 	}
-	defer f.Close()
+
+	json.Unmarshal(f, &conf)
 }
