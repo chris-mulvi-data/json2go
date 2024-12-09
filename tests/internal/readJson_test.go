@@ -23,8 +23,9 @@ func Test_readFile(t *testing.T) {
 		}
 		if err != nil && test.wantError {
 			fmt.Printf("successful failure for: %v\n", err)
+		} else {
+			fmt.Println(data)
 		}
-		fmt.Println(data)
 	}
 
 }
