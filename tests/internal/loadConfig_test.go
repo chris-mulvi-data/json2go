@@ -1,16 +1,17 @@
 package internal_test
 
 import (
-	"fmt"
 	"json2go/internal"
+	"log"
 	"testing"
 )
 
 func TestLoadConfig(test *testing.T) {
+	log.Println("Starting TestLoadConfig")
 	var conf internal.Config
-	fmt.Println(conf)
+	log.Printf("Config object before loading:\n%v\n\n", conf)
 	internal.LoadConfig(&conf)
+	log.Printf("Config object after loading:\n%v\n\n", conf)
 	conf.SetDefaults()
-
-	fmt.Println(conf)
+	log.Printf("Config object after loading defaults:\n%v\n\n", conf)
 }

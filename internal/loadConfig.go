@@ -6,7 +6,7 @@ package internal
 
 import (
 	"encoding/json"
-	"fmt"
+	"log"
 	"os"
 )
 
@@ -20,6 +20,9 @@ func (c *Config) SetDefaults() {
 		userHome := os.Getenv("HOME")
 		c.DestinationPath = userHome + "/json2go-gen"
 	}
+	if c.PreabmleText == "" {
+		c.PreabmleText = "/*\nBuilt using json2go. Please update this GoDoc and the package as needed.\n*/\n"
+	}
 }
 
 // LoadConfig loads the configuration file.  The expected location for the config
@@ -29,7 +32,7 @@ func LoadConfig(conf *Config) {
 	userHome := os.Getenv("HOME")
 	f, err := os.ReadFile(userHome + "/.config/json2go/config.json")
 	if err != nil {
-		fmt.Println(err)
+		log.Println(err)
 	}
 
 	json.Unmarshal(f, &conf)
