@@ -9,6 +9,7 @@ import (
 func TestLoadConfig(test *testing.T) {
 	var conf internal.Config
 	fmt.Println(conf)
+	internal.LoadConfig(&conf)
 	conf.SetDefaults()
 
 	fmt.Println(conf)
