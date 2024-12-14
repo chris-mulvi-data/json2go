@@ -27,3 +27,35 @@ func TestPropertyToField(t *testing.T) {
 	}
 
 }
+
+func TestPadRightToSize(t *testing.T) {
+	tests := []string{"test", "tested", "testing"}
+
+	for _, test := range tests {
+		i.PadRightToSize(&test, 7)
+		fmt.Printf("%s lined up\n", test)
+	}
+}
+
+func TestAlignColumns(t *testing.T) {
+	input := []string{
+		"x x x",
+		"xx xxx",
+		"xxxxx xx xx",
+	}
+
+	expected := []string{
+		"x     x   x",
+		"xx    xxx",
+		"xxxxx xx  xx",
+	}
+
+	results := i.AlignColumns(input)
+
+	for i := 0; i < len(input); i++ {
+		if results[i] != expected[i] {
+			t.Errorf("expected: \"%s\", got: \"%s\"\n", expected[i], results[i])
+		}
+		fmt.Println(results[i])
+	}
+}
