@@ -1,4 +1,4 @@
-#JSON 2 Go
+# JSON 2 Go
 
 This is a command line utility to convert JSON into a Go struct similar to the json2pojo utility for converting JSON to Java classes.
 
@@ -14,4 +14,4 @@ Since this the first thing I've written in Go, I doubt the code will be consider
 
 ## Testing Standards
 
-In order to ensure that testing actually happens, following a test first design is prefered.  This means that the first thing written for any function or feature is the unit test to prove that it works.  This should be a simple use case for this since the bulk of what is needed is text formatting into a very specific syntax.
+In order to ensure that testing actually happens, following a test first design is preferred.  This means that the first thing written for any function or feature is the unit test to prove that it works.  This should be a simple use case for this since the bulk of what is needed is text formatting into a very specific syntax.

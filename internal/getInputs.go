@@ -17,7 +17,7 @@ source json file and a default path will be used as the destination.
 
 When prompted, the user will also have the option to use a default destination.
 */
-func GetUserInputs() (source string, destination string) {
+func GetUserInputs(conf *Config) (source string, destination string) {
 	source = ""
 	destination = ""
 
