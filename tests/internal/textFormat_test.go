@@ -39,19 +39,26 @@ func TestPadRightToSize(t *testing.T) {
 
 func TestAlignColumns(t *testing.T) {
 	input := []string{
-		"x x x",
-		"xx xxx",
-		"xxxxx xx xx",
+		"Bears like to eat",
+		"kake and hunny",
+		"with some nesquick",
 	}
 
 	expected := []string{
-		"x     x   x",
-		"xx    xxx",
-		"xxxxx xx  xx",
+		"Bears like to       eat",
+		"kake  and  hunny",
+		"with  some nesquick",
 	}
+
+	fmt.Println("starting:")
+	for i := range input {
+		fmt.Println(input[i])
+	}
+	fmt.Println()
 
 	results := i.AlignColumns(input)
 
+	fmt.Println("result:")
 	for i := 0; i < len(input); i++ {
 		if results[i] != expected[i] {
 			t.Errorf("expected: \"%s\", got: \"%s\"\n", expected[i], results[i])

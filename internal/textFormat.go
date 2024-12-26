@@ -40,19 +40,18 @@ func AlignColumns(rows []string) []string {
 	var charCounts map[int]int
 	charCounts = make(map[int]int)
 
-	for _, row := range rows {
-		for i, word := range strings.Split(row, " ") {
-			value, isMapContainsKey := charCounts[i]
-			if !isMapContainsKey {
-				charCounts[i] = len(word)
-			} else if isMapContainsKey && value < len(word) {
-				charCounts[i] = len(word)
+	for i := range rows {
+		for j, word := range strings.Split(rows[i], " ") {
+			value, isInMap := charCounts[j]
+			if isInMap && value > len(word) {
+				continue
 			}
+			charCounts[j] = len(word)
 		}
 	}
 
-	for i, row := range rows {
-		words := strings.Split(row, " ")
+	for i := range rows {
+		words := strings.Split(rows[i], " ")
 		for j := range words {
 			if j == len(words)-1 {
 				break
