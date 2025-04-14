@@ -56,3 +56,10 @@ func getPreable() string {
 	LoadConfig(&config)
 	return config.PreabmleText
 }
+
+// CreateFile creates a new empty file to be populated by other functions.
+func CreateFile (filename string) {
+  if filename == "" {
+return
+}
+}
